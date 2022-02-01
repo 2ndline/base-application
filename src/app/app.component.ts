@@ -3,7 +3,7 @@ import { MenuItem } from './interfaces/menu-item.interface';
 import { MenuService } from './services/menu.service';
 
 @Component({
-  selector: 'my-app',
+  selector: 'base-application',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
