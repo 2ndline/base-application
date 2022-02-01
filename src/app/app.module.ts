@@ -12,6 +12,7 @@ import {
   MatToolbarModule,
 } from '@angular/material';
 import { MenuService } from './services/menu.service';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MenuService } from './services/menu.service';
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
+    ComponentsModule,
   ],
   providers: [MenuService],
   declarations: [AppComponent],

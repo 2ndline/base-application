@@ -9,7 +9,6 @@ import { MenuService } from './services/menu.service';
 })
 export class AppComponent {
   name = 'BaseApplication';
-  welcome = 'Welcome to BaseApplication';
   menuItems: MenuItem[];
   constructor(public menuService: MenuService) {
     this.menuItems = menuService.getMenuItems();
