@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem } from './interfaces/menu-item.interface';
 import { MenuService } from './services/menu.service';
-import * as PouchDB from 'pouchdb';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'base-application',
@@ -9,11 +9,18 @@ import * as PouchDB from 'pouchdb';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  pouchdb: any;
   name = 'BaseApplication';
   menuItems: MenuItem[];
-  constructor(public menuService: MenuService) {
+  constructor(
+    public menuService: MenuService,
+    private dataService: DataService
+  ) {
     this.menuItems = menuService.getMenuItems();
-    this.pouchdb = new PouchDB('pouchform');
+
+    var row = {
+      _id: new Date().toISOString(),
+      action: 'AppComponent constructor',
+    };
+    this.dataService.create(row);
   }
 }
