@@ -21,6 +21,6 @@ export class AppComponent {
       _id: new Date().toISOString(),
       action: 'AppComponent constructor',
     };
-    this.dataService.create(row);
+    this.dataService.put(row);
   }
 }
